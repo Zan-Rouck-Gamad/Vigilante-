@@ -1,8 +1,9 @@
- function doSearch(isbn) {
+
+	 function doSearch(isbn) {
 	
 		var key = "NhwWyRiSxpnUEXKVulXqw"; // replace with your key
 
-		var apiUrl = "https://www.goodreads.com/book/isbn/" + isbn + "?key=" + key;
+		var apiUrl = "https://www.goodreads.com/search/index.xml?key=" + key + "&q=" + isbn;
 
 		 $.ajaxPrefilter(function(options) {
      if (options.crossDomain && $.support.cors) {
@@ -19,18 +20,17 @@
  });
 
 			        var title           = 'title';
-			        var isbn10          = 'isbn';
-			        var isbn13          = 'isbn13';
 			        var country_code    = 'country_code';
 			        var image_url       = 'image_url';
 			        var small_image_url = 'small_image_url';
-			        var publisher       = 'publisher';
+			        var author 		      = 'author';
 			        var description     = 'description';
+	
 		    function parseXml(xml) {
 
- 		$(xml).find('book').each(function() {
+ 		$(xml).find('work').each(function() {
 
-         $("#Container").append("<p><a href='" + $(this).children(isbn).text() + "'><img src='" + $(this).children(image_url).text() + "'/></a></p><h2>" + $(this).children(title).text() + "</h2><br/><p>" + $(this).find(publisher).text() + "</p><br/><p>My Rating: " + $(this).parent('review').find(description).text() + "</p>");
+         $("#Container").append("<img src='" + $(this).find(image_url).text() + "'/></a></p><h2>" + $(this).find(title).text() + "</h2><br/><p>" + $(this).find(author).text());
        });
 		    	};
 	}
