@@ -16,9 +16,10 @@
   <link href="css/animate.css" rel="stylesheet" />
   <link href="css/prettyPhoto.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+<script src="js/goodreads.js"></script>
 </head>
 
-<body>
+<body onload="bookInfo('the name of the wind')">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="row">
@@ -35,7 +36,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="menu">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home">Browse</a></li>
+            <li><a href="Browse.html">Browse</a></li>
           </ul>
         </div>
         <!-- /.Navbar-collapse -->
@@ -49,55 +50,12 @@
 <br>
 <br>
 <br>
-    <section id="recommended">
-    <br>
-    <div class="container">
-      <div class="center">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Book Title</h2>
-        
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 wow fadeInRight">
-          <img src="images/1.png" class="img-responsive" />
-        </div>
-        <!--/.col-sm-6-->
-
-        <div class="col-sm-6 wow fadeInDown">
-          <div class="accordion">
-            <div class="panel-group" id="accordion1">       
-                  <h3 class="panel-title">
-                  
-                      Title
-                   
-                 </h3>
-                  <h3 class="panel-title">
-                      Author
-                  
-                  </h3>
-         
-
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  
-                    <p>Sypnosis</p>
-                 
-              </div>
-            </div>
-            <!--/#accordion1-->
-          </div>
-        </div>
-
-      </div>
-      <!--/.row-->
-    </div>
-    <!--/.container-->
-  </section>
+<br>
   <!--/#about-->
+<section id="recommended">
+<div id="Container"></div>
+
+</section>
 
 <section id="about">
     <div class="container">
@@ -108,44 +66,12 @@
       </div>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 wow fadeInRight">
-          <img src="images/1.png" class="img-responsive" />
-          <p>userName</p>
-
+<div class="container">
+      <div class="center">
+        <div class="col-md-6 col-md-offset-3">
+          <div id="review"></div>
         </div>
-        <!--/.col-sm-6-->
-
-        <div class="col-sm-6 wow fadeInDown">
-          <div class="accordion">
-            <div class="panel-group" id="accordion1">
-              <div class="panel panel-default">
-                <div id="collapseOne1" class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    <div class="media accordion-inner">
-                      
-                      <div class="media-body">
-                        <h4>Rating...</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             <div class="panel panel-default">
-                <div class="panel-heading">
-                
-                    <p>Comments</p>
-                 
-                </div>
-              </div>
-            </div>
-            <!--/#accordion1-->
-          </div>
-        </div>
-
       </div>
-      <!--/.row-->
     </div>
     <!--/.container-->
   </section>
@@ -219,7 +145,6 @@
   <script src="js/wow.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="contactform/contactform.js"></script>
 
 </body>
 

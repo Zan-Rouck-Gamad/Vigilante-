@@ -1,44 +1,4 @@
-function doSearch(isbn) {
-	
-		var key = "NhwWyRiSxpnUEXKVulXqw"; // replace with your key
-
-		var apiUrl = "https://www.goodreads.com/search/index.xml?key=" + key + "&q=" + isbn;
-
-		 $.ajaxPrefilter(function(options) {
-     if (options.crossDomain && $.support.cors) {
-       options.url = 'https://cors-anywhere.herokuapp.com/' + apiUrl;
-     }
-   });
-   
-     $.ajax({
-       url: apiUrl,
-       type: 'GET',
-       crossDomain: true,
-       datatype: 'xml',
-       success: parseXml,
- });
-
-			        var title           = 'title';
-			        var image_url       = 'image_url';
-			        var name 		    = 'name';
-	
-		    function parseXml(xml) {
-
- 		$(xml).find('work').each(function() {
-
-         $("#Container").append("<div class='container'><div class='row'><div class='col-sm-6 wow fadeInRight'><img src='" 
-         	+ $(this).find(image_url).text() +
-         	 "' class='img-responsive imgGoodReads' /></div><div class='col-sm-6 wow fadeInDown'><div class='accordion'><div class='panel-group' id='accordion1'><a id='mytitle' href='bookInfo.html' class='panel-title h3Goodreads' onclick='bookInfo()'>" 
-         	+ $(this).find(title).text() + "</a><br><h3 class='panel-title h3Goodreads'>" + $(this).find(name).text() + "</h3></div></div></div></div></div><br>");
-       });
-
-		    	};
-
-	}
-
-
 function bookInfo(title) {
-	 
       var key = "NhwWyRiSxpnUEXKVulXqw"; // replace with your key
           var bookUrl = "https://www.goodreads.com/book/title.xml?&key=" + key + "&title=" + title;
 
